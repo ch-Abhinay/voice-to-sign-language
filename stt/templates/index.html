@@ -25,17 +25,26 @@
                 // var da= d.textContent;
                 for (const ch of data){
                     if (ch==" "){
-                        console.log('\n')
                     const img = document.createElement('img');
-                    img.src= "\\alphabets\\"+"space"+".jpg"
+                    // img.src= ".\\alphabets\\"+"space"+".jpg"
+                    // img.src="https://github.com/ch-Abhinay/voice-to-sign-language/blob/main/stt/templates/alphabets/space.jpg"
+                    img.src="https://github.com/ch-Abhinay/voice-to-sign-language/blob/main/stt/templates/alphabets/space.jpg?raw=true"
                     img.alt='image'
                     resultDiv.appendChild(img);
+                    // resultDiv.innerHTML += `<img src="\\alphabets\\space.jpg" alt="image">`;
                     }
+                    else if (ch=="1"){
+                        resultDiv.innerHTML += `<img src="https://www.dummies.com/wp-content/uploads/194940.image3.jpg" alt="image">`;
+                    }
+                    else{
                     console.log(ch)
                     const img = document.createElement('img');
-                    img.src= "\\alphabets\\"+ch+".jpg"
+                    // img.src= ".\\alphabets\\"+ch+".jpg"
+                    img.src="https://github.com/ch-Abhinay/voice-to-sign-language/blob/main/stt/templates/alphabets/"+ch+".jpg?raw=true"
                     img.alt='image'
                     resultDiv.appendChild(img);
+                    // resultDiv.innerHTML += `<img src="\\alphabets\\${ch}.jpg" alt="image">`;
+                    }
                 };
             });
         }
