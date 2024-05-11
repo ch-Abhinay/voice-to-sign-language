@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import speech_recognition as sr
 import nltk
 from nltk.tokenize import word_tokenize
@@ -28,13 +28,13 @@ def process_audio():
             print("You said:", text)
             lemmatized_text = lemmatize(text)
             filtered_text = stop_word_reducer(lemmatized_text)
-            return filtered_text
+            return filtered_text.lower()
         except sr.UnknownValueError:
             print("Sorry, I couldn't understand what you said.")
-            return "Sorry, I couldn't understand what you said."
-        except sr.RequestError as e:
-            print("Could not request results from Google Speech Recognition service; {0}".format(e))
-            return "Could not request results from Google Speech Recognition service; {0}".format(e)
+            return "1"
+        # except sr.RequestError as e:
+        #     print("Could not request results from Google Speech Recognition service; {0}".format(e))
+        #     return "could not request results from google speech recognition service; {0}".format(e)
 
 def lemmatize(text):
     tokens = word_tokenize(text)
